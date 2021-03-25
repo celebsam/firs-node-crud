@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Single Article</title>
+      <link rel="stylesheet" href="/index.css" />
+   </head>
+   <body>
+      <div class="single-container">
+         <h2><%= article.title %></h2>
+         <small><%= article.createdAt.toDateString() %></small>
+         <h3><%= article.description %></h3>
+         <div>
+            <a class="new-btn" href="/">All Articles</a>
+            <a class="new-btn" href="/article/edit/<%= article._id %>">Edit</a>
+         </div>
+         <p class="mark"><%= article.mark %></p>
+      </div>
+   </body>
+</html>

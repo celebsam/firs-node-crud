@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="/index.css" />
+   </head>
+   <body>
+      <div class="heading">
+         <h1>Welcome to Sam blog</h1>
+         <a href="/article">New Article</a>
+      </div>
+      <div class="card-container">
+         <%article.map(item => {%>
+         <div class="card">
+            <h2><%= item.title %></h2>
+            <small><%= item.createdAt.toDateString() %></small>
+            <p><%= item.description %></p>
+            <a href="/article/<%= item._id %>">Read More</a>
+            <a href="/article/edit/<%= item.id %>">Edit</a>
+            <form
+               method="POST"
+               action="/article/delete/<%= item._id %>?_method=DELETE"
+            >
+               <button type="submit">Delete</button>
+            </form>
+         </div>
+         <% }) %>
+      </div>
+   </body>
+</html>

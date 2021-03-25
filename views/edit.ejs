@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Edit</title>
+      <link rel="stylesheet" href="/index.css" />
+   </head>
+   <body>
+      <h3 class="new-heading">Edit the Article</h3>
+
+      <div>
+         <form action="/article/<%= article.id %>?_method=PUT" method="post">
+            <input
+               value="<%= article.title %>"
+               type="text"
+               name="title"
+               id="title"
+               placeholder="Article Title"
+            />
+            <textarea
+               type="text"
+               name="description"
+               id="description"
+               placeholder="Description"
+            >
+<%= article.description %></textarea
+            >
+            <input
+               value="<%= article.mark %>"
+               type="text"
+               name="mark"
+               id="mark"
+               placeholder="mark"
+            />
+            <div class="block">
+               <a href="/" class="new-btn" type="submit">Cancel</a>
+               <button class="new-btn" type="submit">Save</button>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
